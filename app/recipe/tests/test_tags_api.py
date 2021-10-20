@@ -9,6 +9,13 @@ from core.models import Tag
 
 from recipe.serializers import TagSerializer
 
+# "and the url is going to be in the recipe app, 
+# and the url is going to be called tag and we're
+# going to be using a view set so that automatically appends
+# the action name to the end of the URL for us using the router. 
+# But all we need to know for now is that the url is going to be called tag-list for listing tags.
+# . 
+# " 
 
 TAGS_URL = reverse('recipe:tag-list')
 
@@ -42,6 +49,7 @@ class PrivateTagsApiTest(TestCase):
         Tag.objects.create(user=self.user, name='Vegan')
         Tag.objects.create(user=self.user, name='Dessert')
 
+        print('------TAGS_URL-----:  ' ,TAGS_URL)
         res = self.client.get(TAGS_URL)
 
         tags = Tag.objects.all().order_by('-name')
