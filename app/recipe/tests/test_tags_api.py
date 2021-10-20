@@ -13,9 +13,7 @@ from recipe.serializers import TagSerializer
 # and the url is going to be called tag and we're
 # going to be using a view set so that automatically appends
 # the action name to the end of the URL for us using the router. 
-# But all we need to know for now is that the url is going to be called tag-list for listing tags.
-# . 
-# " 
+# But all we need to know for now is that the url is going to be called tag-list for listing tags." 
 
 TAGS_URL = reverse('recipe:tag-list')
 
